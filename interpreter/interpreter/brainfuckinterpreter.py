@@ -14,8 +14,14 @@ class BrainfuckInterpreter():
 	INST_CLOSE_BRACKET = ']'
 
 	def __init__(self):
-		self._data_array = [bytes([0])] * self.DATA_ARRAY_SIZE
+		self._data_array = []
 		self._data_ptr = 0
+		self._reset()
+
+
+	def _reset(self):
+		self._data_array = [bytes([0])] * self.DATA_ARRAY_SIZE
+		self._data_ptr = 0 
 
 
 	def _get_bytes_at_ptr(self):
@@ -52,6 +58,7 @@ class BrainfuckInterpreter():
 
 
 	def run(self, program, in_stream, out_stream):
+		self._reset()
 
 		bracket_matcher = BracketMatcher(program)
 
