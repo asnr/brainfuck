@@ -1,6 +1,12 @@
 
 class ExpectedExecutions:
 
+	TEST_PROGRAM_DIR = 'test/programs/'
+
+	def program_path_from_filename(self, program_filename):
+		return self.TEST_PROGRAM_DIR + program_filename
+
+
 	def run_bf_program(self, program_filename, test_input=b''):
 		raise Exception()
 
