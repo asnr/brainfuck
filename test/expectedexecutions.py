@@ -53,3 +53,11 @@ class ExpectedExecutions:
 		output = self.run_bf_program(
 			'print_input_full_of_comments.bf', test_input=b'!')
 		self.assertEqual(b'!', output)
+
+	def test_print_hello_world(self):
+		output = self.run_bf_program('hello_world.bf')
+		self.assertEqual(b'Hello world', output)
+
+	def test_print_hello_world_wikipedia(self):
+		output = self.run_bf_program('hello_world_wikipedia.bf')
+		self.assertEqual(b'Hello World!\n', output)
